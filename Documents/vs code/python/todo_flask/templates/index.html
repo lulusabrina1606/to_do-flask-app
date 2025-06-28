@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>To-Do List</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <h1>To-Do List</h1>
+    <h2>by lulu sabrina</h2>
+
+    <button id="toggleTheme">Toggle Dark/Light Mode</button>
+
+    <p>
+      Halo, {{ current_user.username }}!
+      <a href="{{ url_for('logout') }}">Logout</a>
+    </p>
+
+    <form action="/add" method="post">
+      <input
+        type="text"
+        name="task"
+        placeholder="Masukkan tugas baru"
+        required
+      />
+      <button type="submit">Tambah</button>
+    </form>
+
+    <ul>
+      {% for todo in todos %}
+      <li>
+        <form
+          action="{{ url_for('toggle', id=todo.id) }}"
+          method="get"
+          style="margin: 0"
+        >
+          <input
+            type="checkbox"
+            onChange="this.form.submit()"
+            {%
+            if
+            todo.done
+            %}checked{%
+            endif
+            %}
+          />
+        </form>
+        <span class="{% if todo.done %}done{% endif %}">
+          {{ todo.task }}
+          <small style="color: gray; font-size: 12px; margin-left: 8px">
+            ({{ todo.created_at.strftime('%d %b %Y %H:%M') }})
+          </small>
+        </span>
+        <a href="{{ url_for('delete', id=todo.id) }}">[hapus]</a>
+      </li>
+      {% else %}
+      <li>Tidak ada tugas</li>
+      {% endfor %}
+    </ul>
+  </body>
+  <script>
+    const toggleBtn = document.getElementById("toggleTheme");
+    const body = document.body;
+
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+    });
+  </script>
+</html>
