@@ -1,0 +1,138 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #ffeef8;
+  padding: 30px;
+  max-width: 600px;
+  margin: auto;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #eee;
+}
+
+body.dark-mode h1,
+body.dark-mode h2 {
+  color: #ff79c6;
+}
+
+body.dark-mode input[type="text"],
+body.dark-mode input[type="password"] {
+  background-color: #333;
+  color: #eee;
+  border-color: #555;
+}
+
+body.dark-mode button {
+  background-color: #ff79c6;
+  color: #121212;
+}
+
+body.dark-mode button:hover {
+  background-color: #ff4d94;
+}
+
+body.dark-mode li {
+  background-color: #222;
+  box-shadow: none;
+}
+
+body.dark-mode a {
+  color: #ff6ec4;
+}
+
+h1 {
+  text-align: center;
+  color: #d63384;
+}
+
+h2 {
+  text-align: center;
+  color: #555;
+  font-weight: normal;
+  margin-top: -10px;
+  margin-bottom: 30px;
+}
+
+form {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #f8c4de;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #ff66b2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff3385;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: white;
+  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.done {
+  text-decoration: line-through;
+  color: gray;
+}
+
+a {
+  text-decoration: none;
+  color: #ff0033;
+  font-size: 14px;
+}
+
+.container {
+  background-color: #fff0f5;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.15);
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.container h1 {
+  color: #d63384;
+  margin-bottom: 20px;
+}
+
+.container input[type="text"],
+.container input[type="password"] {
+  margin-bottom: 15px;
+}
+
+.container p {
+  margin-top: 15px;
+}
